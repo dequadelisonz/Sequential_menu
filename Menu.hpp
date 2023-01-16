@@ -27,7 +27,7 @@ namespace MenuNS
         char _descr[MAX_NAME_LENGTH] = {0};
         char _printOut[MAX_CHILDS * (MAX_NAME_LENGTH + 8)] = {0}; // add 8 chars for print markup if needed
 
-        bool _isActive = true, _isSelected = false;
+        bool _isActive = true;
         MenuBase *_prev, *_next, *_parent;
 
         void _setDescription(const char *descr);
@@ -38,8 +38,6 @@ namespace MenuNS
         const char *getDescription() const { return _descr; }
 
         virtual bool &isActive() { return _isActive; }
-
-        bool &isSelected() { return _isSelected; }
 
         virtual MenuBase *up() = 0;
         virtual MenuBase *down() = 0;
